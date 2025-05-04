@@ -1,0 +1,15 @@
+<!-- Esta plantilla permite crear una nueva cuenta -->
+{% extends "base.html" %}
+{% block contenido %}
+  <h2>Iniciar sesión</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Entrar</button>
+  </form>
+  <p><a href="{% url 'password_reset' %}">¿Olvidaste tu contraseña?</a></p>
+  <p>¿No tienes cuenta? <a href="{% url 'signup' %}">Regístrate aquí</a></p>
+{% endblock contenido %}
+
+
+
